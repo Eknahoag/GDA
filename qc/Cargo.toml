@@ -1,0 +1,28 @@
+[package]
+name = "gda"
+version = "0.5.0"
+authors = [
+    "ghk <ghk40041@whu.edu.cn>",
+]
+edition = "2021"
+
+[dependencies]
+chrono = "0.4"
+nalgebra = "0.33.0"
+array-init = "2.0"
+num-traits = "0.2"
+libloading = "0.8.5"
+libc = "0.2.155"
+indicatif = "0.17.8"
+reqwest = { version = "0.12.5", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+base64 = "0.22.1"
+clap = { version = "4.5.13", features = ["derive"] }
+redis="0.26.1"
+zmq = "0.10.0"
+serde_json = "1.0.122"
+once_cell = "1.19.0"
+
+[features]
+default = []
+use_dtaun = []

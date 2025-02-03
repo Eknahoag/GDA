@@ -11,21 +11,28 @@ GDA(GNSS Data Analysis)is a comprehensive software for **GNSS data file conversi
 
 *Code packaging requires locally installed rust language and its package management compilation tool cargo, you can cargo build --release for the release version of the program packaging, third-party dependency libraries required will be automatically downloaded in the network environment (may need to be mirrored source configuration), packaged executables call description is as follows.*
 
+## Usage Instructions
+
+1. Install Rust.
+2. Navigate to the `/qc` directory and run `cargo check` to check the code and automatically download the required dependencies (Internet connection required).
+3. In the same directory, use `cargo build` to compile the code and generate the executable file(Requires that the DLL is also in the current directory).
+4. Use or package `qc_plot.py`  for information visualization if needed
+
 ## Package Catalog Structure
 
 ```tex
 GDA
 ├── /decode                Decode Catalog
-│   ├── /include           header file directory
-│   ├── /src               rtklib source code and decoding library c files
+│   ├── decode.zip         Compressed file containing the following:
+│   │   ├── /include       Header file directory
+│   │   ├── /src           rtklib source code and decoding library C files
 │   └── CMakeLists.txt     CMake build configuration file
 ├── /qc                    Quality Analysis Catalog
 │   ├── /src               source code directory
 │   ├── Cargo.toml         Rust Project Configuration Files
-│   └── decode.dll         shared library (computing)
+│   └── decode.dll         shared library (The libraries for other platforms need to be compiled using CMake)
 ├── /qcplot                Drawing Script Catalog
 │   ├── qc_plot.py         quality analysis mapping scripts
-│   └── test.py            test script
 ```
 
 ## Help Information
